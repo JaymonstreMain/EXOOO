@@ -1,0 +1,42 @@
+public class TriBulle {
+    public TriBulle() {
+        int tableau[] = {84, 12, 1, 43, 5, 10};
+
+        System.out.println("---Avant le tri a bulle---");
+
+        affichageTableau(tableau);
+
+        // tri des elements de tableau avec le tri a bulle
+        tri_bulle(tableau);
+
+        System.out.println("---Apres le tri a bulle---");
+
+        affichageTableau(tableau);
+    }
+
+    void tri_bulle(int[] tab) {
+        int tmp = 0;
+        for (int i = 0; i < tab.length; i++) {
+            for (int j = 1; j < (tab.length - i); j++) {
+                if (tab[j - 1] > tab[j]) {
+                    //echanges des elements
+                    tmp = tab[j - 1];
+                    tab[j - 1] = tab[j];
+                    tab[j] = tmp;
+                }
+
+            }
+        }
+    }
+
+    void affichageTableau(int[] tab) {
+        for (int i = 0; i < tab.length; i++) {
+            System.out.print(tab[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        new TriBulle();
+    }
+}
